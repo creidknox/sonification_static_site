@@ -1,0 +1,47 @@
+{{ partial "head.html" . }}
+  <body>
+    <div id="blog">
+      {{ partial "header.html" . }}
+      {{ partial "sidebar.html" . }}
+      {{ partial "post/header-cover.html" . }}
+      <div id="main" data-behavior="{{ .Scratch.Get "sidebarBehavior" }}"
+        class="{{ with .Params.coverimage }}hasCover{{ end }}
+               {{ if eq .Params.covermeta "out" }}hasCoverMetaOut{{ else }}hasCoverMetaIn{{ end }}
+               {{ with .Params.coverCaption }}hasCoverCaption{{ end }}">
+        <section class="postShorten-group main-content-wrap">
+          <h1 style="text-align:center">Data Sonification</h1>
+          <h2 style="text-align:center">Three Options for Sonification of Change in Clinical Parameters Prior to Death</h2>
+          <div>
+            This website represents a collection of the sonification of datasets involving various clinical parameters found in dialysis patients in the weeks leading to death. The datasets are divided by the location and sex of the patient. Use the navigation bar to explore the different sonified datasets.
+          </div>
+          <h3>About Data Sonification</h3>
+          <div>Data Sonification is the use of audio to perceptualize data. Whereas data visualization conveys data using visual representations, sonification uses frequency, amplitute, sequences, and time as auditory cues to the listener interpreting the data.</div>
+          <h3>Technologies Used</h3>
+          <ul>
+            <li>Python</li>
+            <div>
+              <a target="_blank" href="https://www.python.org/">Python</a> is a programming language for general-purpose programming.
+            </div>
+            <li>Pandas</li>
+            <div>
+              <a target="_blank" href="https://pandas.pydata.org/">Pandas</a> is a Python library that allows for powerful data manipulation and analysis, specifically offering useful data structures and operations for analysis. Pandas is particularly effective in dealing with time series data, such as the data presented in the data sets on this site.
+            </div>
+            <li>Chuck</li>
+            <div>
+              <a target="_blank" href="http://chuck.cs.princeton.edu/">ChucK</a> is a strongly-timed programming language for real-time musical composition. It is useful for playing algorithmically-generated musical sequences.
+            </div>
+            <li>Sound Samples</li>
+            <div>
+              All sound samples are courtesy of the <a target="_blank" href="http://www.philharmonia.co.uk/explore/sound_samples">Philharmonia Orchestra</a> in London.
+            </div>
+          </ul>
+          <!--{{ $paginator := .Paginate (where .Data.Pages "Type" "page") }}
+          {{ range $paginator.Pages }}
+            {{ .Render "summary" }}
+          {{ end }}
+          {{ partial "pagination.html" . }} -->
+        </section>
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+{{ partial "foot.html" . }}

@@ -10,6 +10,12 @@ showActions:    false
 ## Origin
 This data was taken from _Interdialytic weight gain, systolic blood pressure, serum albumin, and C-reactive protein levels change in chronic dialysis patients prior to death_ (<a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3697046/">Usvyat et al., 2013</a>)
 
+## Clinical Variables Sonified
+- Interdialytic weight gain
+- Systolic blood pressure
+- Serum albumin
+- C-reactive protein
+
 ## Data Manipulation and Music Generation
 1. Took a 5-week rolling average to smooth out the data
 2. Re-scaled the values between 0 and 1
